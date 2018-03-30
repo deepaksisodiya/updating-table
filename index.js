@@ -14,23 +14,33 @@ require('./site/style.css')
 // here to load the myEs6code.js file, and it will be automatically transpiled.
 
 // Change this to get detailed logging from the stomp library
-global.DEBUG = false
+global.DEBUG = true
 
-const url = "ws://localhost:8011/stomp"
-const client = Stomp.client(url)
+const url = "ws://localhost:8011/stomp";
+const client = Stomp.client(url);
 client.debug = function(msg) {
   if (global.DEBUG) {
     console.info(msg)
   }
-}
+};
 
 function connectCallback() {
   document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs."
+  var subscription = client.subscribe("/fx/prices", dataCallback);
 }
 
 client.connect({}, connectCallback, function(error) {
   alert(error.headers.message)
-})
+});
 
-const exampleSparkline = document.getElementById('example-sparkline')
-Sparkline.draw(exampleSparkline, [1, 2, 3, 6, 8, 20, 2, 2, 4, 2, 3])
+function dataCallback(message) {
+  // called when the client receives a STOMP message from the server
+  if (message.body) {
+      console.log("got message with body ", message.body)
+  } else {
+      console.log("got empty message");
+  }
+}
+
+const exampleSparkline = document.getElementById('example-sparkline');
+Sparkline.draw(exampleSparkline, [1, 2, 3, 6, 8, 20, 2, 2, 4, 2, 3]);

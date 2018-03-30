@@ -15,7 +15,7 @@ require('./site/style.css')
 
 var TableView = require('./es6/newes6');
 // Change this to get detailed logging from the stomp library
-global.DEBUG = true
+global.DEBUG = false
 
 const url = "ws://localhost:8011/stomp";
 const client = Stomp.client(url);
@@ -24,6 +24,8 @@ client.debug = function(msg) {
     console.info(msg)
   }
 };
+
+global.data = {};
 
 function connectCallback() {
   document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs."
@@ -37,9 +39,11 @@ client.connect({}, connectCallback, function(error) {
 function dataCallback(message) {
   // called when the client receives a STOMP message from the server
   if (message.body) {
+    const data = JSON.parse(message.body);
+    global.data[data.name] = data;
     var table = new TableView({
         id: "table",
-        data: message.body,
+        data: global.data
     });
   } else {
     console.log("got empty message");

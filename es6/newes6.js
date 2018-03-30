@@ -1,6 +1,11 @@
 class TableView {
   constructor(props) {
-    console.log('props ', props);
+    this.$ = props.id;
+    this.data = props.data;
+    this.render();
+  }
+  render() {
+    console.log('this.data ', this.data)
   }
 }
 

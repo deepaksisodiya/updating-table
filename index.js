@@ -13,7 +13,7 @@ require('./site/style.css')
 //     require('./es6/myEs6code')
 // here to load the myEs6code.js file, and it will be automatically transpiled.
 
-var TableView = require('./es6/newes6');
+var TableView = require('./es6/TableView');
 // Change this to get detailed logging from the stomp library
 global.DEBUG = false
 
@@ -43,7 +43,7 @@ function dataCallback(message) {
     global.data[data.name] = data;
     var table = new TableView({
         id: "table",
-        data: global.data
+        data: global.data,
     });
   } else {
     console.log("got empty message");

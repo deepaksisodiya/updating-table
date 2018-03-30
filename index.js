@@ -13,6 +13,7 @@ require('./site/style.css')
 //     require('./es6/myEs6code')
 // here to load the myEs6code.js file, and it will be automatically transpiled.
 
+var TableView = require('./es6/newes6');
 // Change this to get detailed logging from the stomp library
 global.DEBUG = true
 
@@ -36,11 +37,19 @@ client.connect({}, connectCallback, function(error) {
 function dataCallback(message) {
   // called when the client receives a STOMP message from the server
   if (message.body) {
-      console.log("got message with body ", message.body)
+    var table = new TableView({
+        id: "table",
+        data: message.body,
+    });
   } else {
-      console.log("got empty message");
+    console.log("got empty message");
   }
 }
 
 const exampleSparkline = document.getElementById('example-sparkline');
 Sparkline.draw(exampleSparkline, [1, 2, 3, 6, 8, 20, 2, 2, 4, 2, 3]);
+
+
+
+
+

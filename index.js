@@ -26,7 +26,7 @@ client.debug = function(msg) {
 };
 
 global.currencyPairs = {};
-global.allData = {};
+global.allCurrencyPairsMidPrices = {};
 
 function connectCallback() {
   // document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs."
@@ -56,24 +56,24 @@ function dataCallback(message) {
     newObj.time = time;
     newObj.midPrice = (data.bestBid + data.bestAsk) / 2;
 
-    if (global.allData[data.name]) {
-      global.allData[data.name].push(newObj);
+    if (global.allCurrencyPairsMidPrices[data.name]) {
+      global.allCurrencyPairsMidPrices[data.name].push(newObj);
 
-      var filterArr = global.allData[data.name].filter((dataObj) => {
+      var filterArr = global.allCurrencyPairsMidPrices[data.name].filter((dataObj) => {
         return ((time/1000 - dataObj.time/1000) < 30);
       });
 
-      global.allData[data.name] = filterArr;
+      global.allCurrencyPairsMidPrices[data.name] = filterArr;
 
     } else {
-      global.allData[data.name] = [newObj];
+      global.allCurrencyPairsMidPrices[data.name] = [newObj];
     }
 
 
     // drawing sparkline
-    for (var name in global.allData) {
+    for (var name in global.allCurrencyPairsMidPrices) {
       const sparkline = new Sparkline(document.getElementById(name), { width: 200 });
-      sparkline.draw(global.allData[name].map((dataObj) => dataObj.midPrice));
+      sparkline.draw(global.allCurrencyPairsMidPrices[name].map((dataObj) => dataObj.midPrice));
     }
   } else {
     console.log("got empty message");

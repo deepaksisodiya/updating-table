@@ -18,8 +18,13 @@ class TableView {
     return tr;
   }
 
+  getSortedArr(arr) {
+    return arr.sort((a, b) => a.lastChangeBid - b.lastChangeBid);
+  }
+
   render() {
     const priceUpdatesArr = Object.values(this.data);
+    const sortedByLastChangeBid = this.getSortedArr(priceUpdatesArr);
 
     const table = `<table>
       <tr>
@@ -31,7 +36,7 @@ class TableView {
         <th>lastChangeAsk</th>
         <th>lastChangeBid</th>
       </tr>
-      ${priceUpdatesArr.map((row) => this.renderRow(row)).join('')}
+      ${sortedByLastChangeBid.map((row) => this.renderRow(row)).join('')}
     </table>`;
 
     this.$.innerHTML = table;

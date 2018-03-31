@@ -6,6 +6,8 @@ class TableView {
   }
 
   renderRow(row) {
+    const canvasId = row.name;
+
     const tr = `<tr>
         <td>${row.name}</td>
         <td>${row.bestBid}</td> 
@@ -14,7 +16,9 @@ class TableView {
         <td>${row.openAsk}</td> 
         <td>${row.lastChangeAsk}</td> 
         <td>${row.lastChangeBid}</td>
+        <td><span id=${canvasId}></span></td>
       </tr>`;
+
     return tr;
   }
 
@@ -35,6 +39,7 @@ class TableView {
         <th>openAsk</th>
         <th>lastChangeAsk</th>
         <th>lastChangeBid</th>
+        <th>Last Column</th>
       </tr>
       ${sortedByLastChangeBid.map((row) => this.renderRow(row)).join('')}
     </table>`;

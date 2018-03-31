@@ -26,6 +26,7 @@ client.debug = function(msg) {
 };
 
 global.data = {};
+global.allData = {};
 
 function connectCallback() {
   document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs."
@@ -46,6 +47,26 @@ function dataCallback(message) {
         node: document.getElementById('table'),
         data: global.data,
     });
+
+
+    // From here i am starting the second part
+
+    var d = new Date();
+    var time = d.getTime();
+    data.time = time;
+    if (global.allData[data.name]) {
+      global.allData[data.name].push(data);
+
+      var filterArr = global.allData[data.name].filter((dataObj) => {
+        return ((time/1000 - dataObj.time/1000) < 30);
+      });
+
+      global.allData[data.name] = filterArr;
+
+    } else {
+      global.allData[data.name] = [data];
+    }
+
   } else {
     console.log("got empty message");
   }

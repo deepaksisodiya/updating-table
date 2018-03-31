@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableView Call The Constructor and create table 1`] = `
+"<table>
+      <tbody><tr>
+        <th>Name</th>
+        <th>bestBid</th> 
+        <th>bestAsk</th>
+        <th>openBid</th>
+        <th>openAsk</th>
+        <th>lastChangeAsk</th>
+        <th>lastChangeBid</th>
+      </tr>
+      <tr>
+        <td>gbpaud</td>
+        <td>1.8899720617188756</td> 
+        <td>1.9550019816411313</td> 
+        <td>1.8885006037024021</td> 
+        <td>1.932899396297598</td> 
+        <td>0.06332772101079831</td> 
+        <td>0.08900450895206324</td>
+      </tr>
+    </tbody></table>"
+`;

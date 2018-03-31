@@ -1,6 +1,6 @@
 class TableView {
   constructor(props) {
-    this.$ = document.getElementById(props.id);
+    this.$ = props.node;
     this.data = props.data;
     this.render();
   }

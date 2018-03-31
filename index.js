@@ -41,8 +41,9 @@ function dataCallback(message) {
   if (message.body) {
     const data = JSON.parse(message.body);
     global.data[data.name] = data;
+
     var table = new TableView({
-        id: "table",
+        node: document.getElementById('table'),
         data: global.data,
     });
   } else {

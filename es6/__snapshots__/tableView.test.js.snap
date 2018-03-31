@@ -4,13 +4,13 @@ exports[`TableView Call The Constructor and create table 1`] = `
 "<table>
       <tbody><tr>
         <th>Name</th>
-        <th>bestBid</th> 
-        <th>bestAsk</th>
-        <th>openBid</th>
-        <th>openAsk</th>
-        <th>lastChangeAsk</th>
-        <th>lastChangeBid</th>
-        <th>Last Column</th>
+        <th>BestBid</th> 
+        <th>BestAsk</th>
+        <th>OpenBid</th>
+        <th>OpenAsk</th>
+        <th>LastChangeAsk</th>
+        <th>LastChangeBid</th>
+        <th>Midprice</th>
       </tr>
       <tr>
         <td>gbpaud</td>
@@ -29,13 +29,13 @@ exports[`TableView Sorted the given data by lastChangeBid 1`] = `
 "<table>
       <tbody><tr>
         <th>Name</th>
-        <th>bestBid</th> 
-        <th>bestAsk</th>
-        <th>openBid</th>
-        <th>openAsk</th>
-        <th>lastChangeAsk</th>
-        <th>lastChangeBid</th>
-        <th>Last Column</th>
+        <th>BestBid</th> 
+        <th>BestAsk</th>
+        <th>OpenBid</th>
+        <th>OpenAsk</th>
+        <th>LastChangeAsk</th>
+        <th>LastChangeBid</th>
+        <th>Midprice</th>
       </tr>
       <tr>
         <td>usdeur</td>

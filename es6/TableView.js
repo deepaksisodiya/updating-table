@@ -33,13 +33,13 @@ class TableView {
     const table = `<table>
       <tr>
         <th>Name</th>
-        <th>bestBid</th> 
-        <th>bestAsk</th>
-        <th>openBid</th>
-        <th>openAsk</th>
-        <th>lastChangeAsk</th>
-        <th>lastChangeBid</th>
-        <th>Last Column</th>
+        <th>BestBid</th> 
+        <th>BestAsk</th>
+        <th>OpenBid</th>
+        <th>OpenAsk</th>
+        <th>LastChangeAsk</th>
+        <th>LastChangeBid</th>
+        <th>Midprice</th>
       </tr>
       ${sortedByLastChangeBid.map((row) => this.renderRow(row)).join('')}
     </table>`;

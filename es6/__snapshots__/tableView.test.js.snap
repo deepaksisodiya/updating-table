@@ -10,6 +10,7 @@ exports[`TableView Call The Constructor and create table 1`] = `
         <th>openAsk</th>
         <th>lastChangeAsk</th>
         <th>lastChangeBid</th>
+        <th>Last Column</th>
       </tr>
       <tr>
         <td>gbpaud</td>
@@ -19,6 +20,7 @@ exports[`TableView Call The Constructor and create table 1`] = `
         <td>1.932899396297598</td> 
         <td>0.06332772101079831</td> 
         <td>0.08900450895206324</td>
+        <td><span id=\\"gbpaud\\"></span></td>
       </tr>
     </tbody></table>"
 `;
@@ -33,6 +35,7 @@ exports[`TableView Sorted the given data by lastChangeBid 1`] = `
         <th>openAsk</th>
         <th>lastChangeAsk</th>
         <th>lastChangeBid</th>
+        <th>Last Column</th>
       </tr>
       <tr>
         <td>usdeur</td>
@@ -42,6 +45,7 @@ exports[`TableView Sorted the given data by lastChangeBid 1`] = `
         <td>109.78172867376465</td> 
         <td>-4.862314256927661</td> 
         <td>-10</td>
+        <td><span id=\\"usdeur\\"></span></td>
       </tr><tr>
         <td>euraud</td>
         <td>106.7297012204255</td> 
@@ -50,6 +54,7 @@ exports[`TableView Sorted the given data by lastChangeBid 1`] = `
         <td>109.78172867376465</td> 
         <td>-4.862314256927661</td> 
         <td>1</td>
+        <td><span id=\\"euraud\\"></span></td>
       </tr><tr>
         <td>usdjpy</td>
         <td>106.7297012204255</td> 
@@ -58,6 +63,7 @@ exports[`TableView Sorted the given data by lastChangeBid 1`] = `
         <td>109.78172867376465</td> 
         <td>-4.862314256927661</td> 
         <td>2</td>
+        <td><span id=\\"usdjpy\\"></span></td>
       </tr>
     </tbody></table>"
 `;

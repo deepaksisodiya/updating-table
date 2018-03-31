@@ -50,12 +50,14 @@ function dataCallback(message) {
 
 
     // From here i am starting the second part
-
     var d = new Date();
     var time = d.getTime();
-    data.time = time;
+    var newObj = {};
+    newObj.time = time;
+    newObj.midPrice = (data.bestBid + data.bestAsk) / 2;
+
     if (global.allData[data.name]) {
-      global.allData[data.name].push(data);
+      global.allData[data.name].push(newObj);
 
       var filterArr = global.allData[data.name].filter((dataObj) => {
         return ((time/1000 - dataObj.time/1000) < 30);
@@ -64,9 +66,15 @@ function dataCallback(message) {
       global.allData[data.name] = filterArr;
 
     } else {
-      global.allData[data.name] = [data];
+      global.allData[data.name] = [newObj];
     }
 
+
+    // drawing sparkline
+    for (var property1 in global.allData) {
+      const sparkline = new Sparkline(document.getElementById(property1), { width: 200 });
+      sparkline.draw(global.allData[property1].map((dataObj) => dataObj.midPrice));
+    }
   } else {
     console.log("got empty message");
   }

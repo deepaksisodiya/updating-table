@@ -14,10 +14,85 @@
 
 <h2 class="title">Dev Challenge</h2>
 <div id="table"></div>
-<div class="contact">
-    <p>Name: Deepak Sisodiya</p>
-    <p>Email: <a href="mailto:deepak.sisodiya@gmail.com">deepak.sisodiya@gmail.com</a></p>
-</div>
+
+
+<h2>Notes</h2>
+
+<ul>
+    <li><b>A high level description of my approach</b></br>
+        - I am subscribing for <code>client.subscribe("/fx/prices", dataCallback);</code> </br>
+        - creating the currencyPairs in global with object like </br>
+
+        <pre>
+            global.currencyPairs = {
+              usdjpy: {
+                  "name": "usdjpy",
+                  "bestBid": 106.7297012204255,
+                  "bestAsk": 107.25199883791178,
+                  "openBid": 107.22827132623534,
+                  "openAsk": 109.78172867376465,
+                  "lastChangeAsk": -4.862314256927661,
+                  "lastChangeBid": -2.8769211401569663
+                }
+            }
+        </pre>
+
+        - then creating an instance of TableView class for creating the Table
+
+        <pre>
+            new TableView({
+                node: document.getElementById('table'),
+                data: global.currencyPairs,
+            });
+        </pre>
+
+        - creating the global.allCurrencyPairsMidPrices for creating sparklines with last 30 seconds data
+
+        <pre>
+            global.allCurrencyPairsMidPrices = {
+              usdjpy: [
+                {
+                  "name": "usdjpy",
+                  "time": 1522516237111
+                  "midPrice": 3,
+                },
+                {
+                  "name": "usdjpy",
+                  "time": 1522516227135
+                  "midPrice": 2,
+                }
+              usdeur: [
+                {
+                  "name": "usdeur",
+                  "time": 1522516237456
+                  "midPrice": 1,
+                },
+                {
+                  "name": "usdeur",
+                  "time": 1522516227765
+                  "midPrice": 4,
+                }
+              ]
+            }
+        </pre>
+
+        - drawing the sparkline by looping the global.allCurrencyPairsMidPrices
+
+        <pre>
+            for (var name in global.allCurrencyPairsMidPrices) {
+              const sparkline = new Sparkline(document.getElementById(name), { width: 200 });
+              sparkline.draw(global.allCurrencyPairsMidPrices[name].map((dataObj) => dataObj.midPrice));
+            }
+        </pre>
+    </li>
+    <li>
+        I have added <a href="https://facebook.github.io/jest/">jest</a> for unit testing.
+        type <code>npm run test</code> to run the test
+    </li>
+    <li>
+        Name: Deepak Sisodiya, Email: <a href="mailto:deepak.sisodiya@gmail.com">deepak.sisodiya@gmail.com</a>
+    </li>
+</ul>
 
 <!-- This is a description of what you should do for this task.  You can remove it for your answer -->
 

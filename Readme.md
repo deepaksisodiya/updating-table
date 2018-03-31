@@ -18,3 +18,19 @@ fx updates.
 
 Once you've started the development server, navigate to http://localhost:8011
 to read the task description and get started.
+
+
+Solution
+===============================
+
+How to run
+```
+npm install
+npm start
+```
+
+How to run unit test
+
+```
+npm run test
+```

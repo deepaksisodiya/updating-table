@@ -25,7 +25,7 @@ client.debug = function(msg) {
   }
 };
 
-global.data = {};
+global.currencyPairs = {};
 global.allData = {};
 
 function connectCallback() {
@@ -41,11 +41,11 @@ function dataCallback(message) {
   // called when the client receives a STOMP message from the server
   if (message.body) {
     const data = JSON.parse(message.body);
-    global.data[data.name] = data;
+    global.currencyPairs[data.name] = data;
 
     var table = new TableView({
         node: document.getElementById('table'),
-        data: global.data,
+        data: global.currencyPairs,
     });
 
 

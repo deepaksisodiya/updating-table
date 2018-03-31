@@ -11,6 +11,17 @@ Object {
 }
 `;
 
+exports[`updateCurrencyPairsMidPrices filter the array for last 30 seconds 1`] = `
+Object {
+  "usdjpy": Array [
+    Object {
+      "midPrice": 9,
+      "time": 1522516452157,
+    },
+  ],
+}
+`;
+
 exports[`updateCurrencyPairsMidPrices update the array of same company 1`] = `
 Object {
   "usdjpy": Array [

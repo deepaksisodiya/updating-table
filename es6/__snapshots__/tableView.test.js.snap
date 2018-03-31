@@ -22,3 +22,42 @@ exports[`TableView Call The Constructor and create table 1`] = `
       </tr>
     </tbody></table>"
 `;
+
+exports[`TableView Sorted the given data by lastChangeBid 1`] = `
+"<table>
+      <tbody><tr>
+        <th>Name</th>
+        <th>bestBid</th> 
+        <th>bestAsk</th>
+        <th>openBid</th>
+        <th>openAsk</th>
+        <th>lastChangeAsk</th>
+        <th>lastChangeBid</th>
+      </tr>
+      <tr>
+        <td>usdeur</td>
+        <td>106.7297012204255</td> 
+        <td>107.25199883791178</td> 
+        <td>107.22827132623534</td> 
+        <td>109.78172867376465</td> 
+        <td>-4.862314256927661</td> 
+        <td>-10</td>
+      </tr><tr>
+        <td>euraud</td>
+        <td>106.7297012204255</td> 
+        <td>107.25199883791178</td> 
+        <td>107.22827132623534</td> 
+        <td>109.78172867376465</td> 
+        <td>-4.862314256927661</td> 
+        <td>1</td>
+      </tr><tr>
+        <td>usdjpy</td>
+        <td>106.7297012204255</td> 
+        <td>107.25199883791178</td> 
+        <td>107.22827132623534</td> 
+        <td>109.78172867376465</td> 
+        <td>-4.862314256927661</td> 
+        <td>2</td>
+      </tr>
+    </tbody></table>"
+`;

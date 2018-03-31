@@ -29,7 +29,7 @@ global.data = {};
 global.allData = {};
 
 function connectCallback() {
-  document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs."
+  // document.getElementById('stomp-status').innerHTML = "It has now successfully connected to a stomp server serving price updates for some foreign exchange currency pairs."
   var subscription = client.subscribe("/fx/prices", dataCallback);
 }
 
@@ -80,8 +80,8 @@ function dataCallback(message) {
   }
 }
 
-const exampleSparkline = document.getElementById('example-sparkline');
-Sparkline.draw(exampleSparkline, [1, 2, 3, 6, 8, 20, 2, 2, 4, 2, 3]);
+// const exampleSparkline = document.getElementById('example-sparkline');
+// Sparkline.draw(exampleSparkline, [1, 2, 3, 6, 8, 20, 2, 2, 4, 2, 3]);
 
 
 

@@ -10,3 +10,18 @@ Object {
   ],
 }
 `;
+
+exports[`updateCurrencyPairsMidPrices update the array of same company 1`] = `
+Object {
+  "usdjpy": Array [
+    Object {
+      "midPrice": 3,
+      "time": 1522516237111,
+    },
+    Object {
+      "midPrice": 9,
+      "time": 1522516227135,
+    },
+  ],
+}
+`;

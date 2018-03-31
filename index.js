@@ -71,9 +71,9 @@ function dataCallback(message) {
 
 
     // drawing sparkline
-    for (var property1 in global.allData) {
-      const sparkline = new Sparkline(document.getElementById(property1), { width: 200 });
-      sparkline.draw(global.allData[property1].map((dataObj) => dataObj.midPrice));
+    for (var name in global.allData) {
+      const sparkline = new Sparkline(document.getElementById(name), { width: 200 });
+      sparkline.draw(global.allData[name].map((dataObj) => dataObj.midPrice));
     }
   } else {
     console.log("got empty message");

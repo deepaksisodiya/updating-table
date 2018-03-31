@@ -20,26 +20,24 @@ h2 {
 }
 
 table {
-    margin: auto;
-    left: auto;
-    right: auto;
-    border: 1px solid grey;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-tr:nth-child(even) {
-    background-color: #f0f0f0;
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-td {
-    width: 130px;
-    text-align: right;
-}
+table tr:nth-child(even){background-color: #f2f2f2;}
 
-th {
-    text-align: center;
+table tr:hover {background-color: #ddd;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #636363;
     color: white;
-    background-color: black;
-}
-td:nth-child(1) {
-    text-align: center
 }

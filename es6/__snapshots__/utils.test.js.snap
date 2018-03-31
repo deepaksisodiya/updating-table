@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateCurrencyPairsMidPrices calls first time 1`] = `
+Object {
+  "usdjpy": Array [
+    Object {
+      "midPrice": 3,
+      "time": 132345321,
+    },
+  ],
+}
+`;

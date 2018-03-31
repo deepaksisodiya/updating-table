@@ -1,21 +1,19 @@
-const updateCurrencyPairsMidPrices = (data, global) => {
-  var d = new Date();
-  var time = d.getTime();
+const updateCurrencyPairsMidPrices = (data, allCurrencyPairsMidPrices, time) => {
   var newObj = {};
   newObj.time = time;
   newObj.midPrice = (data.bestBid + data.bestAsk) / 2;
 
-  if (global.allCurrencyPairsMidPrices[data.name]) {
-    global.allCurrencyPairsMidPrices[data.name].push(newObj);
+  if (allCurrencyPairsMidPrices[data.name]) {
+    allCurrencyPairsMidPrices[data.name].push(newObj);
 
-    var filterArr = global.allCurrencyPairsMidPrices[data.name].filter((dataObj) => {
+    var filterArr = allCurrencyPairsMidPrices[data.name].filter((dataObj) => {
       return ((time/1000 - dataObj.time/1000) < 30);
     });
 
-    global.allCurrencyPairsMidPrices[data.name] = filterArr;
+    allCurrencyPairsMidPrices[data.name] = filterArr;
 
   } else {
-    global.allCurrencyPairsMidPrices[data.name] = [newObj];
+    allCurrencyPairsMidPrices[data.name] = [newObj];
   }
 };
 

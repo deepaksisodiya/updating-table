@@ -49,7 +49,9 @@ function dataCallback(message) {
         data: global.currencyPairs,
     });
 
-    updateCurrencyPairsMidPrices(data, global);
+    var d = new Date();
+    var time = d.getTime();
+    updateCurrencyPairsMidPrices(data, global.allCurrencyPairsMidPrices, time);
 
     // drawing sparkline
     for (var name in global.allCurrencyPairsMidPrices) {

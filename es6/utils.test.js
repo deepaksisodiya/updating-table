@@ -1,6 +1,5 @@
 const updateCurrencyPairsMidPrices = require('./utils');
 
-
 describe('updateCurrencyPairsMidPrices', () => {
   it('calls first time', () => {
     const data = {

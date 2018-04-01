@@ -44,9 +44,11 @@ function dataCallback(message) {
     const data = JSON.parse(message.body);
     global.currencyPairs[data.name] = data;
 
+    var sortedArrayByLastChangeBid = utils.getSortedArray(global.currencyPairs);
+
     new TableView({
         node: document.getElementById('table'),
-        data: global.currencyPairs,
+        data: sortedArrayByLastChangeBid,
     });
 
     var d = new Date();

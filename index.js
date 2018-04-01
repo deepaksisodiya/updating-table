@@ -14,7 +14,7 @@ require('./site/style.css')
 // here to load the myEs6code.js file, and it will be automatically transpiled.
 
 var TableView = require('./es6/TableView');
-var updateCurrencyPairsMidPrices = require('./es6/utils');
+var utils = require('./es6/utils');
 // Change this to get detailed logging from the stomp library
 global.DEBUG = false
 
@@ -51,7 +51,7 @@ function dataCallback(message) {
 
     var d = new Date();
     var time = d.getTime();
-    updateCurrencyPairsMidPrices(data, global.allCurrencyPairsMidPrices, time);
+    utils.updateCurrencyPairsMidPrices(data, global.allCurrencyPairsMidPrices, time);
 
     // drawing sparkline
     for (var name in global.allCurrencyPairsMidPrices) {

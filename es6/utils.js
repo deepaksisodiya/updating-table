@@ -20,4 +20,6 @@ const updateCurrencyPairsMidPrices = (data, allCurrencyPairsMidPrices, currentTi
   }
 };
 
-module.exports = updateCurrencyPairsMidPrices;
+module.exports = {
+  updateCurrencyPairsMidPrices,
+};

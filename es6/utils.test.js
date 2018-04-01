@@ -1,4 +1,4 @@
-const updateCurrencyPairsMidPrices = require('./utils');
+const utils = require('./utils');
 
 describe('updateCurrencyPairsMidPrices', () => {
   it('calls first time', () => {
@@ -10,7 +10,7 @@ describe('updateCurrencyPairsMidPrices', () => {
     const allCurrencyPairsMidPrices = {};
     const time = 132345321;
 
-    updateCurrencyPairsMidPrices(data, allCurrencyPairsMidPrices, time);
+    utils.updateCurrencyPairsMidPrices(data, allCurrencyPairsMidPrices, time);
 
     expect(allCurrencyPairsMidPrices).toMatchSnapshot();
   });
@@ -31,7 +31,7 @@ describe('updateCurrencyPairsMidPrices', () => {
     };
     const time = 1522516227135;
 
-    updateCurrencyPairsMidPrices(data, allCurrencyPairsMidPrices, time);
+    utils.updateCurrencyPairsMidPrices(data, allCurrencyPairsMidPrices, time);
 
     expect(allCurrencyPairsMidPrices).toMatchSnapshot();
   });
@@ -56,7 +56,7 @@ describe('updateCurrencyPairsMidPrices', () => {
     };
     const time = 1522516452157;
 
-    updateCurrencyPairsMidPrices(data, allCurrencyPairsMidPrices, time);
+    utils.updateCurrencyPairsMidPrices(data, allCurrencyPairsMidPrices, time);
 
     expect(allCurrencyPairsMidPrices).toMatchSnapshot();
   });

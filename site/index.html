@@ -37,12 +37,18 @@
             }
         </pre>
 
+        - then calling the utils.getSortedArray with global.currencyPairs, which return the sorted array by lastChangeBid </br>
+
+        <pre>
+            var sortedArrayByLastChangeBid = utils.getSortedArray(global.currencyPairs);
+        </pre>
+
         - then creating an instance of TableView class for creating the Table
 
         <pre>
             new TableView({
                 node: document.getElementById('table'),
-                data: global.currencyPairs,
+                data: sortedArrayByLastChangeBid,
             });
         </pre>
 

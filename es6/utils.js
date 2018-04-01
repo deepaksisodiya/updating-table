@@ -20,6 +20,13 @@ const updateCurrencyPairsMidPrices = (data, allCurrencyPairsMidPrices, currentTi
   }
 };
 
+const getSortedArray = (data) => {
+  const priceUpdatesArr = Object.values(data);
+  const sortedByLastChangeBid = priceUpdatesArr.sort((a, b) => a.lastChangeBid - b.lastChangeBid);
+  return sortedByLastChangeBid;
+};
+
 module.exports = {
   updateCurrencyPairsMidPrices,
+  getSortedArray,
 };

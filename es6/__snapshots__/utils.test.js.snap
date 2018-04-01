@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getSortedArray should generate array and return sorted array by lastChangeBid 1`] = `
+Array [
+  Object {
+    "bestAsk": 107.25199883791178,
+    "bestBid": 106.7297012204255,
+    "lastChangeAsk": -4.862314256927661,
+    "lastChangeBid": -10,
+    "name": "usdeur",
+    "openAsk": 109.78172867376465,
+    "openBid": 107.22827132623534,
+  },
+  Object {
+    "bestAsk": 107.25199883791178,
+    "bestBid": 106.7297012204255,
+    "lastChangeAsk": -4.862314256927661,
+    "lastChangeBid": 1,
+    "name": "euraud",
+    "openAsk": 109.78172867376465,
+    "openBid": 107.22827132623534,
+  },
+  Object {
+    "bestAsk": 107.25199883791178,
+    "bestBid": 106.7297012204255,
+    "lastChangeAsk": -4.862314256927661,
+    "lastChangeBid": 2,
+    "name": "usdjpy",
+    "openAsk": 109.78172867376465,
+    "openBid": 107.22827132623534,
+  },
+]
+`;
+
 exports[`updateCurrencyPairsMidPrices calls first time 1`] = `
 Object {
   "usdjpy": Array [

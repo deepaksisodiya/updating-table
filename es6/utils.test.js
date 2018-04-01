@@ -61,3 +61,39 @@ describe('updateCurrencyPairsMidPrices', () => {
     expect(allCurrencyPairsMidPrices).toMatchSnapshot();
   });
 });
+
+describe('getSortedArray', () => {
+  it('should generate array and return sorted array by lastChangeBid', () => {
+    const data = {
+      usdjpy: {
+        "name": "usdjpy",
+        "bestBid": 106.7297012204255,
+        "bestAsk": 107.25199883791178,
+        "openBid": 107.22827132623534,
+        "openAsk": 109.78172867376465,
+        "lastChangeAsk": -4.862314256927661,
+        "lastChangeBid": 2
+      },
+      usdeur: {
+        "name": "usdeur",
+        "bestBid": 106.7297012204255,
+        "bestAsk": 107.25199883791178,
+        "openBid": 107.22827132623534,
+        "openAsk": 109.78172867376465,
+        "lastChangeAsk": -4.862314256927661,
+        "lastChangeBid": -10
+      },
+      name: {
+        "name": "euraud",
+        "bestBid": 106.7297012204255,
+        "bestAsk": 107.25199883791178,
+        "openBid": 107.22827132623534,
+        "openAsk": 109.78172867376465,
+        "lastChangeAsk": -4.862314256927661,
+        "lastChangeBid": 1
+      },
+    };
+
+    expect(utils.getSortedArray(data)).toMatchSnapshot();
+  });
+});
